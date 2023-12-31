@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+    width: 0;  
+    background: transparent;  
+  }
+  
+  .vertical-text-2 {
+    writing-mode: vertical-rl; /* vertical right-to-left */
+    text-orientation: mixed;   /* upright text orientation */
+    white-space: nowrap;       /* prevent text from wrapping */
+  
+  }
+  
+  .vertical-text-1 , .vertical-text-3 {
+    writing-mode: vertical-rl; /* vertical left-to-right */
+    text-orientation: mixed;   /* upright text orientation */
+    white-space: nowrap;       /* prevent text from wrapping */
+    transform: rotate(180deg);
+   
+  }
+  .slider{
+    animation : 5s slide infinite linear;
+  }
+  
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  @keyframes arrow {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  .arrow-right{
+    animation: 4s arrow infinite linear;
+  }
+
+  *::selection {
+    background-color: #FB923C; /* Set your desired background color */
+    color: #0B0B0B; /* Set your desired text color */
+  }
