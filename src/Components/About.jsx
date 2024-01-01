@@ -187,7 +187,9 @@ const About = ({aboutRef , contactRef , scroller , heroRef}) => {
           </div>
           <div className="h-[17vh] flex justify-start items-center">
             <div className="mx-[1.6vw] outline flex items-center justify-center px-10 py-1 hover:bg-orange-400 duration-500 text-orange-400 hover:text-[#0B0B0B] text-[2vw] italic font-serif my-auto outline-orange-400 rounded-full">
-              <p>send me an e-mail</p>
+              <a className="" href={`mailto:sample@gmail.com`}>
+              send me an e-mail
+              </a>
             </div>
           </div>
           <div className="h-[31vh] flex items-end justify-between text-[1.09375vw] uppercase">
