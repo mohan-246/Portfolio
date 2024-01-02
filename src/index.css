@@ -24,7 +24,10 @@
   .slider{
     animation : 5s slide infinite linear;
   }
-  
+  .slider-4 {
+    /* animation : 5s slide infinite linear; */
+    text-align: start;
+  }
   @keyframes slide {
     0% {
       transform: translateX(0);
