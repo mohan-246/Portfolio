@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Projects = ({ projectsRef }) => {
   gsap.registerPlugin(ScrollTrigger);
-  const project1 = "Chat App",project2 = 'Photographer Portfolio',project3 = "AI image generation",project4 = "AI snake",project5 = 'Personal Portfolio',project6 = 'Movie finder';
+  const project1 = "Chat App",project2 = 'Photographer Portfolio',project3 = "Image generation platform",project4 = "AI snake",project5 = 'Personal Portfolio',project6 = 'Movie finder';
   const project1Link = "https://chat-frontend-n5np.onrender.com/",project2Link = 'https://jayanth-kpv-portfolio-1.onrender.com/',project3Link = "https://dall-e-mk5l.onrender.com/",project4Link = "https://github.com/mohan-246/snake_ai",project5Link = 'https://mohanakrishnang.onrender.com/',project6Link = 'https://moviescope.onrender.com/';
   useEffect(() => {
     gsap.from(".word-1", {
@@ -157,7 +157,7 @@ const Projects = ({ projectsRef }) => {
       ref={projectsRef}
       className="h-[100vh] w-[300vw] flex justify-start items-center vertical-container  "
     >
-      <div className=" bg-inherit flex justify-center items-center panel w-[100vw]  project-1  flex-col z-50 text-container">
+      <div className=" bg-transparent flex justify-center items-center panel w-[100vw]  project-1  flex-col  text-container">
         <p className="text-[6vw] uppercase leading-none word-1 font-semibold text-white">
           Selected
         </p>

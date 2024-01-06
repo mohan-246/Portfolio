@@ -6,6 +6,8 @@ import { faArrowTurnDown } from "@fortawesome/free-solid-svg-icons";
 
 const About = ({aboutRef , contactRef , scroller , heroRef}) => {
   gsap.registerPlugin(ScrollTrigger);
+  const email="mohanakrishnang04@gmail.com" , linkedIn = "https://www.linkedin.com/in/mohan-g-24723322a/" , gitHub = "https://github.com/mohan-246" , twitter = "https://twitter.com/Mohan24__"
+
   useEffect(() => {
     gsap.from(".name span", {
       y: "-27vh",
@@ -187,7 +189,7 @@ const About = ({aboutRef , contactRef , scroller , heroRef}) => {
           </div>
           <div className="h-[17vh] flex justify-start items-center">
             <div className="mx-[1.6vw] outline flex items-center justify-center px-10 py-1 hover:bg-orange-400 duration-500 text-orange-400 hover:text-[#0B0B0B] text-[2vw] italic font-serif my-auto outline-orange-400 rounded-full">
-              <a className="" href={`mailto:sample@gmail.com`}>
+              <a className="" href={`mailto:${email}`}>
               send me an e-mail
               </a>
             </div>
@@ -201,33 +203,33 @@ const About = ({aboutRef , contactRef , scroller , heroRef}) => {
               </p>
             </div>
             <div className="flex w-[25vw] justify-between mx-[1.6vw] mb-[1.6vw]">
-              <a
-                className=""
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.instagram.com"
-              >
-                instagram
-              </a>
-              <a
-                className=""
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.linkedin.com"
-              >
-                LinkedIn
-              </a>
-              <a
-                className=""
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.twitter.com"
-              >
-                Twitter
-              </a>
-              <a className="" href={`mailto:sample@gmail.com`}>
-                email
-              </a>
+            <a
+              className=""
+              target="_blank"
+              rel="noopener noreferrer"
+              href={gitHub}
+            >
+              GitHub
+            </a>
+            <a
+              className=""
+              target="_blank"
+              rel="noopener noreferrer"
+              href={linkedIn}
+            >
+              LinkedIn
+            </a>
+            <a
+              className=""
+              target="_blank"
+              rel="noopener noreferrer"
+              href={twitter}
+            >
+              Twitter
+            </a>
+            <a className="" href={`mailto:${email}`}>
+              email
+            </a>
             </div>
           </div>
         </div>
