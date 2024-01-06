@@ -1,12 +1,13 @@
-import { useEffect } from "react";
+import { useEffect,useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
+// import * as THREE from 'three';
 
 const Hero = ({ heroRef }) => {
   gsap.registerPlugin(ScrollTrigger);
-
+  // const particlesRef = useRef(null);
   useEffect(() => {
     ScrollTrigger.create({
       trigger: ".vertical",
@@ -23,26 +24,27 @@ const Hero = ({ heroRef }) => {
       },
     });
   }, []);
+
   return (
     <section
       ref={heroRef}
-      className="h-[100vh] w-[104vw] flex panel text-white "
+      className="h-[100vh] w-[104vw] flex panel relative text-white "
     >
-      <div className="w-[100vw] border-x flex flex-col border-white">
+      <div className="w-[100vw] flex flex-col ">
         <div className="w-[100vw] h-[7vh]"></div>
         <div className="w-[100vw] h-[78vh] flex items-center flex-col justify-center">
           <p className="flex flex-col mt-[5vh]">
-            <span className="uppercase text-[6.5vw] font-semibold leading-none text-white ">
+            <span className="uppercase text-[6.5vw] font-semibold leading-none text-white hero-line-1">
               &nbsp;&nbsp;&nbsp; independent
             </span>
-            <span className="uppercase text-[6.5vw] font-semibold leading-none text-white ">
+            <span className="uppercase text-[6.5vw] font-semibold leading-none text-white hero-line-2">
               full-stack
             </span>
-            <span className="uppercase text-[6.5vw] font-semibold leading-none text-white ">
+            <span className="uppercase text-[6.5vw] font-semibold leading-none text-white hero-line-3">
               &nbsp;&nbsp;&nbsp; web developer
             </span>
           </p>
-          <p className="ml-[42vw]">
+          <p className="ml-[42vw] hero-line-4">
             <span className="text-[3.5vmin]">Welcome to my <span className="font-serif italic">Portfolio</span>&nbsp;^_^</span>
           </p>
         </div>
