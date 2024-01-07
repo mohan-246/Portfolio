@@ -27,12 +27,12 @@ const heroLine3 = 'web developer';
 const gitHub = 'https://github.com';
 const linkedIn = 'https://www.linkedin.com';
 const twitter = 'https://twitter.com';
-const project1 = ['Chat App', 'https://example.com/', null, 'pic1.jpg'];
-const project2 = ['Photographer Portfolio', 'https://example.com/', null, 'pic2.jpg'];
-const project3 = ['Image generation platform', 'https://example.com/', null, 'pic3.jpg'];
-const project4 = ['AI snake', 'https://example.com', null, 'pic4.jpg'];
-const project5 = ['Personal Portfolio', 'https://example.com/', null, 'pic5.jpg'];
-const project6 = ['Movie finder', 'https://example.com/', null, 'pic6.jpg'];
+const project1 = ['Chat App', 'https://example.com/', null, 'pic1.png'];
+const project2 = ['Photographer Portfolio', 'https://example.com/', null, 'pic2.png'];
+const project3 = ['Image generation platform', 'https://example.com/', null, 'pic3.png'];
+const project4 = ['AI snake', 'https://example.com', null, 'pic4.png'];
+const project5 = ['Personal Portfolio', 'https://example.com/', null, 'pic5.png'];
+const project6 = ['Movie finder', 'https://example.com/', null, 'pic6.png'];
 const aboutLine1= "Hey! I'm Mohan";
 const aboutLine2= 'a nineteen years old';
 const aboutLine3= 'full-stack developer. Currently';
@@ -44,7 +44,7 @@ const aboutPara4= 'I develop your new website by listening to your needs and des
 const aboutHead2= 'INTERACTION';
 const aboutHead3= 'PERFORMANCE';
 const aboutHead4= 'TEAMWORK';
-const aboutImage= [null, 'pic7.jpg'];
+const aboutImage= [null, 'pic7.png'];
   //content
 
   useEffect(() => {
