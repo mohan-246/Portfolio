@@ -17,7 +17,7 @@ const App = () => {
   const contactRef = useRef(null);
   const [showOverlay , setShowOverlay] = useState(false)
 
-  //content
+  //Content
   const tagline = 'Available for freelance work';
 const name = 'Mohana krishnan';
 const email = 'sample@gmail.com';
@@ -44,8 +44,8 @@ const aboutPara4= 'I develop your new website by listening to your needs and des
 const aboutHead2= 'INTERACTION';
 const aboutHead3= 'PERFORMANCE';
 const aboutHead4= 'TEAMWORK';
-const aboutImage= [null, 'pic7.png'];
-  //content
+const aboutImage= [null, 'pic7.jpg'];
+  //Content
 
   useEffect(() => {
     const tl = gsap.timeline();
