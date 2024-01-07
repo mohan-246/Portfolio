@@ -8,13 +8,13 @@ Welcome to the Developer Portfolio repository! This project is a responsive and 
 
 - **Customizable Text:** Easily update and personalize text content on the website.
   
-- **Image URL Editing:** Change image URLs to display your photography portfolio.
+- **Image URL Editing:** Change image URLs to display in your portfolio.
   
 - **Responsive Design:** Ensures a seamless viewing experience on various devices.
 
 ## Getting Started
 
-Follow these steps to set up and customize your Photographer Portfolio:
+Follow these steps to set up and customize your Developer Portfolio:
 
 ### Prerequisites
 
@@ -25,7 +25,7 @@ Follow these steps to set up and customize your Photographer Portfolio:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/photography-portfolio-1.git
+git clone https://github.com/mohan-246/Portfolio.git
 cd Portfolio
 ```
 
