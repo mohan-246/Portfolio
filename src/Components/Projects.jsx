@@ -199,29 +199,26 @@ const Projects = ({ projectsRef , project1 , setProject1 , project2 , setProject
       </div>
       <div className="w-[100vw] h-[100vh] panel project-2 relative text-white">
         <div className=" works-1 flex absolute top-[105vh] left-[-30vw] rounded-lg work-pic-1 flex-col gap-3 font-serif italic text-sm">
-        {p1? <div className="flex flex-col"> <input type="text" value={project1[0]} onChange={(e) => handleTitleChange(e,setProject1) }/> <input type="text" value={project1[1]} onChange={(e) => handleSourceChange(e,setProject1)}/> </div> : <p className=" -translate-x-2" onClick={() => sp1(true)} >{project1[0]}</p>}
+        <a className=" -translate-x-2" target="_blank" rel="noopener noreferrer" href={project1[1]}>{project1[0]}</a>
           <img
             src={project1[3]}
-            onClick={() => addInput(setProject1)}
             alt="projects"
             className="project-img object-cover h-[30vh] w-[12vw] rounded-lg object-center"
           />
         </div>
         <div className=" works-1 absolute top-[110vh] left-[-80vw]  rounded-lg flex work-pic-2 flex-col gap-3 font-serif italic text-sm">
-        {p2? <div className="flex flex-col"> <input type="text" value={project2[0]} onChange={(e) => handleTitleChange(e,setProject2) }/> <input type="text" value={project2[1]} onChange={(e) => handleSourceChange(e,setProject2)}/> </div> : <p className=" -translate-x-2" onClick={() => sp2(true)} >{project2[0]}</p>}
+        <a className=" -translate-x-2" target="_blank" rel="noopener noreferrer" href={project2[1]}>{project2[0]}</a>
           <img
             src={project2[3]}
-            onClick={() => addInput(setProject2)}
             alt="projects"
             className="project-img object-cover h-[30vh] w-[12vw] rounded-lg object-center"
           />
         </div>
 
         <div className=" works-1 absolute top-[165vh] left-[-55vw]  rounded-lg flex work-pic-3 flex-col gap-3 font-serif italic text-sm">
-        {p3? <div className="flex flex-col"> <input type="text" value={project3[0]} onChange={(e) => handleTitleChange(e,setProject3) }/> <input type="text" value={project3[1]} onChange={(e) => handleSourceChange(e,setProject3)}/> </div> : <p className=" -translate-x-2" onClick={() => sp3(true)} >{project3[0]}</p>}
+        <a className=" -translate-x-2" target="_blank" rel="noopener noreferrer" href={project3[1]}>{project3[0]}</a>
           <img
             src={project3[3]}
-            onClick={() => addInput(setProject3)}
             alt="projects"
             className="project-img object-cover h-[35vh] w-[14vw] rounded-lg object-center"
           />
@@ -230,29 +227,26 @@ const Projects = ({ projectsRef , project1 , setProject1 , project2 , setProject
       <div className="w-[100vw] h-[100vh] panel project-3 relative text-white">
         
         <div className=" works-2 absolute top-[115vh] left-[-130vw]  rounded-lg work-pic-4 flex-col flex gap-3 font-serif italic text-sm" >
-        {p4? <div className="flex flex-col"> <input type="text" value={project4[0]} onChange={(e) => handleTitleChange(e,setProject4) }/> <input type="text" value={project4[1]} onChange={(e) => handleSourceChange(e,setProject4)}/> </div> : <p className=" -translate-x-2" onClick={() => sp4(true)} >{project4[0]}</p>}
+        <a className=" -translate-x-2" target="_blank" rel="noopener noreferrer" href={project4[1]}>{project4[0]}</a>
           {" "}
           <img
             src={project4[3]}
-            onClick={() => addInput(setProject4)}
             alt="projects"
             className="project-img object-cover h-[30vh] w-[12vw] rounded-lg object-center"
           />
         </div>
         <div className=" works-2 absolute top-[120vh] left-[-180vw] rounded-lg work-pic-5 flex-col flex gap-3 font-serif italic text-sm" >
-        {p5? <div className="flex flex-col"> <input type="text" value={project5[0]} onChange={(e) => handleTitleChange(e,setProject5) }/> <input type="text" value={project5[1]} onChange={(e) => handleSourceChange(e,setProject5)}/> </div> : <p className=" -translate-x-2" onClick={() => sp5(true)} >{project5[0]}</p>}
+        <a className=" -translate-x-2" target="_blank" rel="noopener noreferrer" href={project5[1]}>{project5[0]}</a>
           <img
             src={project5[3]}
-            onClick={() => addInput(setProject5)}
             alt="projects"
             className="project-img object-cover h-[30vh] w-[12vw] rounded-lg object-center"
           />
         </div>
         <div className=" works-2 absolute top-[165vh] left-[-155vw] rounded-lg work-pic-6 flex-col flex gap-3 font-serif italic text-sm" >
-        {p6? <div className="flex flex-col"> <input type="text" value={project6[0]} onChange={(e) => handleTitleChange(e,setProject6) }/> <input type="text" value={project6[1]} onChange={(e) => handleSourceChange(e,setProject6)}/> </div> : <p className=" -translate-x-2" onClick={() => sp6(true)} >{project6[0]}</p>}
+        <a className=" -translate-x-2" target="_blank" rel="noopener noreferrer" href={project6[1]}>{project6[0]}</a>
           <img
             src={project6[3]}
-            onClick={() => addInput(setProject6)}
             alt="projects"
             className="project-img object-cover h-[35vh] w-[14vw] rounded-lg object-center"
           />

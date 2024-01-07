@@ -139,27 +139,21 @@ const About = ({
         </div>
         <div className="w-[70vw] ">
           <p className="text-[6vw] leading-none flex flex-col italic text-nowrap">
-            <input
-              type="text"
-              value={aboutLine1}
-              onChange={(e) => setAboutLine1(e.target.value)}
-            />
-            <input
-              onChange={(e) => setAboutLine2(e.target.value)}
-              value={aboutLine2}
-            />
-            <input
-              className="about-line-3 bg-transparent w-[95vw]"
-              onChange={(e) => setAboutLine3(e.target.value)}
-              value={aboutLine3}
-            />
-            <input
-              onChange={(e) => setAboutLine4(e.target.value)}
-              value={aboutLine4}
-            />
+            <p
+              
+            >&nbsp;&nbsp;{aboutLine1}</p>
+            
+            <p
+            >&nbsp;&nbsp;&nbsp;{aboutLine2}</p>
+            <p
+              className="about-line-3 "
+            >&nbsp;&nbsp;{aboutLine3}</p>
+            
+            <p
+            >&nbsp;&nbsp;&nbsp;{aboutLine4}</p>
           </p>
         </div>
-        <div className="w-[36vw] h-[100vh] flex" onClick={() => addInput(setAboutImage)}>
+        <div className="w-[36vw] h-[100vh] flex">
           <div className="w-[35vw] h-[100vh] flex flex-col justify-center overflow-hidden items-center">
             <div className="h-[7vh]"></div>
             <img
@@ -176,11 +170,9 @@ const About = ({
       <div className="h-[100vh] w-[90vw] panel border-r border-white flex justify-center items-center text-white panel2">
         <div className="flex flex-col items-start w-[80vw]">
           <div className="h-[50vh] flex items-center justify-center">
-            <textarea
-              className="w-[40vw] text-[1.25vw]  h-[25vh]"
-              value={aboutPara1}
-              onChange={(e) => setAboutPara1(e.target.value)}
-            />{" "}
+            <p className="w-[40vw] text-[1.25vw]  h-[25vh]">
+{aboutPara1}
+            </p>
           </div>
           <div className="flex justify-between w-[60vw]">
             <div className="w-[15vw] hinput-[40vh]">
@@ -188,51 +180,43 @@ const About = ({
                 <span className=" text-orange-400 font-serif text-[1.25vw]">
                   01
                 </span>
-                <input
-                  className="ml-3 text-[1.25vw]"
-                  value={aboutHead2}
-                  onChange={(e) => setAboutHead2(e.target.value)}
-                />
+                <p className="ml-3 text-[1.25vw]">
+{aboutHead2}
+                </p>
+                  
               </p>
-              <textarea
-                className="text-[1.09375vw]  h-[25vh]"
-                value={aboutPara2}
-                onChange={(e) => setAboutPara2(e.target.value)}
-              />
+              <p className="text-[1.09375vw]  h-[25vh]">
+{aboutPara2}
+              </p>
+                
+                
             </div>
             <div className="w-[15vw] h-[40vh]">
               <p className="mb-4 flex">
                 <span className=" text-orange-400 font-serif text-[1.25vw]">
                   02
                 </span>
-                <input
-                  className="ml-3 text-[1.25vw]"
-                  value={aboutHead3}
-                  onChange={(e) => setAboutHead3(e.target.value)}
-                />
+                <p className="ml-3 text-[1.25vw]">
+{aboutHead3}
+                </p>
+                   
               </p>
-              <textarea
-                className="text-[1.09375vw]  h-[25vh]"
-                value={aboutPara3}
-                onChange={(e) => setAboutPara3(e.target.value)}
-              />
+              <p className="text-[1.09375vw]  h-[25vh]">
+{aboutPara3}
+              </p> 
             </div>
             <div className="w-[15vw] h-[40vh]">
               <p className="mb-4 flex">
                 <span className=" text-orange-400 font-serif text-[1.25vw]">
                   03
                 </span>
-                <input
-                  className="ml-3 text-[1.25vw]"
-                  value={aboutHead4}
-                  onChange={(e) => setAboutHead4(e.target.value)}
-                />
+                <p  className="ml-3 text-[1.25vw]">
+{aboutHead4}
+                </p> 
               </p>
-              <textarea
-                className="text-[1.09375vw] h-[25vh]"
-                value={aboutPara4}
-                onChange={(e) => setAboutPara4(e.target.value)}
-              />
+              <p className="text-[1.09375vw] h-[25vh]">
+{aboutPara4}
+              </p> 
             </div>
           </div>
         </div>

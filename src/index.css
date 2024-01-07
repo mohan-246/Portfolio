@@ -26,7 +26,7 @@ body {
    
   }
   .slider{
-    /* animation : 5s slide infinite linear; */
+    animation : 5s slide infinite linear;
   }
   .slider-4 {
     /* animation : 5s slide infinite linear; */
