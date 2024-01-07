@@ -4,10 +4,65 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowTurnDown } from "@fortawesome/free-solid-svg-icons";
 
-const About = ({aboutRef , contactRef , scroller , heroRef}) => {
+const About = ({
+  name,
+  aboutRef,
+  contactRef,
+  scroller,
+  heroRef,
+  aboutLine1,
+  setAboutLine1,
+  aboutLine2,
+  setAboutLine2,
+  aboutLine3,
+  setAboutLine3,
+  aboutLine4,
+  setAboutLine4,
+  email,
+  linkedIn,
+  gitHub,
+  twitter,
+  aboutPara1,
+  setAboutPara1,
+  aboutPara2,
+  setAboutPara2,
+  aboutPara3,
+  setAboutPara3,
+  aboutPara4,
+  setAboutPara4,
+  aboutHead2,
+  setAboutHead2,
+  aboutHead3,
+  setAboutHead3,
+  aboutHead4,
+  setAboutHead4,
+  aboutImage,
+  setAboutImage
+}) => {
   gsap.registerPlugin(ScrollTrigger);
-  const email="mohanakrishnang04@gmail.com" , linkedIn = "https://www.linkedin.com/in/mohan-g-24723322a/" , gitHub = "https://github.com/mohan-246" , twitter = "https://twitter.com/Mohan24__"
+  function addInput(setImageSource) {
+    var fileInput = document.createElement("input");
+    fileInput.type = "file";
+    fileInput.accept = "image/";
+    fileInput.id = "dynamicFileInput";
+    fileInput.style.display = "none";
 
+    document.body.appendChild(fileInput);
+
+    fileInput.addEventListener("change", function (e) {
+      handleImageChange(e, setImageSource);
+      document.body.removeChild(fileInput);
+    });
+
+    fileInput.click();
+  }
+  const handleImageChange = (e, setImage) => {
+    const file = e.target.files[0];
+    if (file) {
+      setImage([file , URL.createObjectURL(file)]);
+    }
+  };
+  const tagLine = "know more about me.";
   useEffect(() => {
     gsap.from(".name span", {
       y: "-27vh",
@@ -33,71 +88,86 @@ const About = ({aboutRef , contactRef , scroller , heroRef}) => {
         });
       },
     });
-    gsap.from(".about-line-3",{
-      xPercent: 15 ,
-      scrollTrigger:{
+    gsap.from(".about-line-3", {
+      xPercent: 15,
+      scrollTrigger: {
         trigger: ".vertical",
         start: `+=${window.innerWidth * 4} bottom`,
         end: `+=${window.innerWidth}`,
-        scrub: 1 ,
+        scrub: 1,
         // markers: true,
-      }
-    })
-    gsap.to(".about-image",{
-      scale: 1.15 ,
-      scrollTrigger:{
+      },
+    });
+    gsap.to(".about-image", {
+      scale: 1.15,
+      scrollTrigger: {
         trigger: ".vertical",
         start: `+=${window.innerWidth * 4} bottom`,
         end: `+=${window.innerWidth}`,
-        scrub: 1 ,
+        scrub: 1,
         // markers: true,
-      }
-    })
+      },
+    });
   });
   return (
-    <div ref={aboutRef} className="w-[300vw] h-[100vh] about flex flex-row containerrr">
+    <div
+      ref={aboutRef}
+      className="w-[300vw] h-[100vh] about flex flex-row containerrr"
+    >
       <div className="h-[100vh] w-[110vw] panel border-l border-white text-white flex items-center justify-start panel1">
-        <div  className="w-[4vw] border-r flex justify-center border-white">
+        <div className="w-[4vw] border-r flex justify-center border-white">
           <div className=" vertical-text-3 text-[1.8vw] h-[100vh] overflow-visible flex text-nowrap gap-2 uppercase">
-            <p>&nbsp;&nbsp;&nbsp;know more about me.</p>
-            <p>&nbsp;&nbsp;&nbsp;know more about me.</p>
-            <p>&nbsp;&nbsp;&nbsp;know more about me.</p>
-            <p>&nbsp;&nbsp;&nbsp;know more about me.</p>
-            <p>&nbsp;&nbsp;&nbsp;know more about me.</p>
-            <p>&nbsp;&nbsp;&nbsp;know more about me.</p>
-            <p>&nbsp;&nbsp;&nbsp;know more about me.</p>
-            <p>&nbsp;&nbsp;&nbsp;know more about me.</p>
-            <p>&nbsp;&nbsp;&nbsp;know more about me.</p>
-            <p>&nbsp;&nbsp;&nbsp;know more about me.</p>
-            <p>&nbsp;&nbsp;&nbsp;know more about me.</p>
-            <p>&nbsp;&nbsp;&nbsp;know more about me.</p>
-            <p>&nbsp;&nbsp;&nbsp;know more about me.</p>
-            <p>&nbsp;&nbsp;&nbsp;know more about me.</p>
-            <p>&nbsp;&nbsp;&nbsp;know more about me.</p>
-            <p>&nbsp;&nbsp;&nbsp;know more about me.</p>
-            <p>&nbsp;&nbsp;&nbsp;know more about me.</p>
-            <p>&nbsp;&nbsp;&nbsp;know more about me.</p>
+            <p>&nbsp;&nbsp;&nbsp;{tagLine}</p>
+            <p>&nbsp;&nbsp;&nbsp;{tagLine}</p>
+            <p>&nbsp;&nbsp;&nbsp;{tagLine}</p>
+            <p>&nbsp;&nbsp;&nbsp;{tagLine}</p>
+            <p>&nbsp;&nbsp;&nbsp;{tagLine}</p>
+            <p>&nbsp;&nbsp;&nbsp;{tagLine}</p>
+            <p>&nbsp;&nbsp;&nbsp;{tagLine}</p>
+            <p>&nbsp;&nbsp;&nbsp;{tagLine}</p>
+            <p>&nbsp;&nbsp;&nbsp;{tagLine}</p>
+            <p>&nbsp;&nbsp;&nbsp;{tagLine}</p>
+            <p>&nbsp;&nbsp;&nbsp;{tagLine}</p>
+            <p>&nbsp;&nbsp;&nbsp;{tagLine}</p>
+            <p>&nbsp;&nbsp;&nbsp;{tagLine}</p>
+            <p>&nbsp;&nbsp;&nbsp;{tagLine}</p>
+            <p>&nbsp;&nbsp;&nbsp;{tagLine}</p>
+            <p>&nbsp;&nbsp;&nbsp;{tagLine}</p>
+            <p>&nbsp;&nbsp;&nbsp;{tagLine}</p>
+            <p>&nbsp;&nbsp;&nbsp;{tagLine}</p>
           </div>
         </div>
         <div className="w-[70vw] ">
           <p className="text-[6vw] leading-none flex flex-col italic text-nowrap">
-            <span>
-              &nbsp;&nbsp;Hey! I&apos;m{" "}
-              <span className="font-serif">Mohan</span>,
-            </span>
-            <span>&nbsp;&nbsp;&nbsp;a nineteen years old</span>{" "}
-            <span className="about-line-3">&nbsp;full-stack developer. Currently</span>{" "}
-            <span>
-              &nbsp;&nbsp;&nbsp;based in{" "}
-              <span className="font-serif">Chennai, India</span>
-            </span>
+            <input
+              type="text"
+              value={aboutLine1}
+              onChange={(e) => setAboutLine1(e.target.value)}
+            />
+            <input
+              onChange={(e) => setAboutLine2(e.target.value)}
+              value={aboutLine2}
+            />
+            <input
+              className="about-line-3 bg-transparent w-[95vw]"
+              onChange={(e) => setAboutLine3(e.target.value)}
+              value={aboutLine3}
+            />
+            <input
+              onChange={(e) => setAboutLine4(e.target.value)}
+              value={aboutLine4}
+            />
           </p>
         </div>
-        <div className="w-[36vw] h-[100vh] flex">
+        <div className="w-[36vw] h-[100vh] flex" onClick={() => addInput(setAboutImage)}>
           <div className="w-[35vw] h-[100vh] flex flex-col justify-center overflow-hidden items-center">
-          <div className="h-[7vh]"></div>
-          <img className=" object-cover object-center about-image h-[93vh] w-[35vw] -z-50 " src="./chembarambakkam lake.jpg" alt="chembarambakkam lake viewpoint" />
-
+            <div className="h-[7vh]"></div>
+            <img
+              className=" object-cover object-center about-image h-[93vh] w-[35vw] -z-50 "
+              src={aboutImage[1]}
+              
+              alt="About image"
+            />
           </div>
           <div className="bg-orange-400 h-[100vh] w-[1vw]"></div>
         </div>
@@ -106,76 +176,77 @@ const About = ({aboutRef , contactRef , scroller , heroRef}) => {
       <div className="h-[100vh] w-[90vw] panel border-r border-white flex justify-center items-center text-white panel2">
         <div className="flex flex-col items-start w-[80vw]">
           <div className="h-[50vh] flex items-center justify-center">
-            <p className="w-[40vw] text-[1.25vw]">
-              {" "}
-              As a full-stack developer, I predominantly work with React and
-              Node.js. I utilize Redux to manage the state of my applications,
-              GSAP for animations, and MongoDB as my preferred database
-              solution. This combination allows me to efficiently build and
-              deliver dynamic, responsive, and data-driven web applications.{" "}
-            </p>{" "}
+            <textarea
+              className="w-[40vw] text-[1.25vw]  h-[25vh]"
+              value={aboutPara1}
+              onChange={(e) => setAboutPara1(e.target.value)}
+            />{" "}
           </div>
           <div className="flex justify-between w-[60vw]">
-            <div className="w-[15vw] h-[40vh]">
-              <p className="mb-4">
+            <div className="w-[15vw] hinput-[40vh]">
+              <p className="mb-4 flex">
                 <span className=" text-orange-400 font-serif text-[1.25vw]">
                   01
                 </span>
-                <span className="ml-3 text-[1.25vw]">INTERACTION</span>
+                <input
+                  className="ml-3 text-[1.25vw]"
+                  value={aboutHead2}
+                  onChange={(e) => setAboutHead2(e.target.value)}
+                />
               </p>
-              <p className="text-[1.09375vw]">
-                A pleasant experience for your users goes through the animations
-                and interactions of your project, I spend time to imagine and
-                design them to ensure a smooth and remarkable navigation.
-              </p>
+              <textarea
+                className="text-[1.09375vw]  h-[25vh]"
+                value={aboutPara2}
+                onChange={(e) => setAboutPara2(e.target.value)}
+              />
             </div>
             <div className="w-[15vw] h-[40vh]">
-              <p className="mb-4">
+              <p className="mb-4 flex">
                 <span className=" text-orange-400 font-serif text-[1.25vw]">
                   02
                 </span>
-                <span className="ml-3 text-[1.25vw]">PERFORMANCE</span>
+                <input
+                  className="ml-3 text-[1.25vw]"
+                  value={aboutHead3}
+                  onChange={(e) => setAboutHead3(e.target.value)}
+                />
               </p>
-              <p className="text-[1.09375vw]">
-                On the web, every second counts, I pay particular attention to
-                the performance of your project by respecting the best practices
-                of every tool I use.
-              </p>
+              <textarea
+                className="text-[1.09375vw]  h-[25vh]"
+                value={aboutPara3}
+                onChange={(e) => setAboutPara3(e.target.value)}
+              />
             </div>
             <div className="w-[15vw] h-[40vh]">
-              <p className="mb-4">
+              <p className="mb-4 flex">
                 <span className=" text-orange-400 font-serif text-[1.25vw]">
                   03
                 </span>
-                <span className="ml-3 text-[1.25vw]">TEAMWORK</span>
+                <input
+                  className="ml-3 text-[1.25vw]"
+                  value={aboutHead4}
+                  onChange={(e) => setAboutHead4(e.target.value)}
+                />
               </p>
-              <p className="text-[1.09375vw]">
-                I develop your new website by listening to your needs and
-                desires and by giving you my point of view in order to get the
-                best for your project.
-              </p>
+              <textarea
+                className="text-[1.09375vw] h-[25vh]"
+                value={aboutPara4}
+                onChange={(e) => setAboutPara4(e.target.value)}
+              />
             </div>
           </div>
         </div>
       </div>
-      <div ref={contactRef} className="h-[100vh] w-[100vw] panel about-3 text-white ">
+      <div
+        ref={contactRef}
+        className="h-[100vh] w-[100vw] panel about-3 text-white "
+      >
         <div className="mt-[10vh] h-[90vh] flex flex-col">
-          <div className="h-[25vh] flex justify-center items-center w-[100vw]">
+          <div className="h-[25vh] flex items-center w-[100vw]">
             <p className="text-[13vw] text-nowrap flex gap-0 font-semibold name">
-              <span>M</span>
-              <span>o</span>
-              <span>h</span>
-              <span>a</span>
-              <span>n</span>
-              <span>a</span>
-              <span>K</span>
-              <span>r</span>
-              <span>i</span>
-              <span>s</span>
-              <span>h</span>
-              <span>n</span>
-              <span>a</span>
-              <span>n</span>
+              {name.split("").map((c, index) => (
+                <span key={index}>{c}</span>
+              ))}
             </p>
           </div>
           <div className="h-[17vh] items-center w-[100vw] flex justify-between">
@@ -183,14 +254,17 @@ const About = ({aboutRef , contactRef , scroller , heroRef}) => {
               <span>want to discuss</span>
               <span>a new project?</span>
             </p>
-            <p onClick={() => scroller(heroRef)} className="mx-[1.6vw] font-sans uppercase text-[3.45vw] my-auto leading-none arrow hover:scale-150 rotate-90 duration-500">
+            <p
+              onClick={() => scroller(heroRef)}
+              className="mx-[1.6vw] font-sans uppercase text-[3.45vw] my-auto leading-none arrow hover:scale-150 rotate-90 duration-500"
+            >
               <FontAwesomeIcon icon={faArrowTurnDown} />
             </p>
           </div>
           <div className="h-[17vh] flex justify-start items-center">
             <div className="mx-[1.6vw] outline flex items-center justify-center px-10 py-1 hover:bg-orange-400 duration-500 text-orange-400 hover:text-[#0B0B0B] text-[2vw] italic font-serif my-auto outline-orange-400 rounded-full">
               <a className="" href={`mailto:${email}`}>
-              send me an e-mail
+                send me an e-mail
               </a>
             </div>
           </div>
@@ -203,33 +277,33 @@ const About = ({aboutRef , contactRef , scroller , heroRef}) => {
               </p>
             </div>
             <div className="flex w-[25vw] justify-between mx-[1.6vw] mb-[1.6vw]">
-            <a
-              className=""
-              target="_blank"
-              rel="noopener noreferrer"
-              href={gitHub}
-            >
-              GitHub
-            </a>
-            <a
-              className=""
-              target="_blank"
-              rel="noopener noreferrer"
-              href={linkedIn}
-            >
-              LinkedIn
-            </a>
-            <a
-              className=""
-              target="_blank"
-              rel="noopener noreferrer"
-              href={twitter}
-            >
-              Twitter
-            </a>
-            <a className="" href={`mailto:${email}`}>
-              email
-            </a>
+              <a
+                className=""
+                target="_blank"
+                rel="noopener noreferrer"
+                href={gitHub}
+              >
+                GitHub
+              </a>
+              <a
+                className=""
+                target="_blank"
+                rel="noopener noreferrer"
+                href={linkedIn}
+              >
+                LinkedIn
+              </a>
+              <a
+                className=""
+                target="_blank"
+                rel="noopener noreferrer"
+                href={twitter}
+              >
+                Twitter
+              </a>
+              <a className="" href={`mailto:${email}`}>
+                email
+              </a>
             </div>
           </div>
         </div>

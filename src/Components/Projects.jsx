@@ -1,11 +1,17 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const Projects = ({ projectsRef }) => {
+const Projects = ({ projectsRef , project1 , setProject1 , project2 , setProject2 , project3 , setProject3 , project4 , setProject4 , project5 , setProject5 , project6 , setProject6 }) => {
   gsap.registerPlugin(ScrollTrigger);
-  const project1 = "Chat App",project2 = 'Photographer Portfolio',project3 = "Image generation platform",project4 = "AI snake",project5 = 'Personal Portfolio',project6 = 'Movie finder';
-  const project1Link = "https://chat-frontend-n5np.onrender.com/",project2Link = 'https://jayanth-kpv-portfolio-1.onrender.com/',project3Link = "https://dall-e-mk5l.onrender.com/",project4Link = "https://github.com/mohan-246/snake_ai",project5Link = 'https://mohanakrishnang.onrender.com/',project6Link = 'https://moviescope.onrender.com/';
+ 
+  const [p1 , sp1] = useState(false)
+  const [p2 , sp2] = useState(false)
+  const [p3 , sp3] = useState(false)
+  const [p4 , sp4] = useState(false)
+  const [p5 , sp5] = useState(false)
+  const [p6 , sp6] = useState(false)
+
   useEffect(() => {
     gsap.from(".word-1", {
       xPercent: 100,
@@ -149,9 +155,35 @@ const Projects = ({ projectsRef }) => {
       },
     });
   }, []);
-  const openSite = (site) => {
-    window.open(site, '_blank');
+  function addInput(setImageSource) {
+    var fileInput = document.createElement("input");
+    fileInput.type = "file";
+    fileInput.accept = "image/";
+    fileInput.id = "dynamicFileInput";
+    fileInput.style.display = "none";
+
+    document.body.appendChild(fileInput);
+
+    fileInput.addEventListener("change", function (e) {
+      handleImageChange(e, setImageSource);
+      document.body.removeChild(fileInput);
+    });
+
+    fileInput.click();
+  }
+  const handleImageChange = (e, setImage) => {
+    const file = e.target.files[0];
+    if (file) {
+      setImage(([title , psource , tempfile , templink]) => [title , psource ,file , URL.createObjectURL(file)]);
+      // console.log(project2)
+    }
   };
+  const handleTitleChange = (e , setTitle) => {
+    setTitle(([title , psource , tempfile , templink]) => [e.target.value , psource , tempfile , templink]);
+  }
+  const handleSourceChange = (e , setSource) => {
+    setSource(([title , psource , tempfile , templink]) => [title , e.target.value , tempfile , templink]);
+  }
   return (
     <div
       ref={projectsRef}
@@ -166,27 +198,30 @@ const Projects = ({ projectsRef }) => {
         </p>
       </div>
       <div className="w-[100vw] h-[100vh] panel project-2 relative text-white">
-        <div className=" works-1 flex absolute top-[105vh] left-[-30vw] rounded-lg work-pic-1 flex-col gap-3 font-serif italic text-sm" onClick={() => openSite(project1Link)} >
-        <p className=" -translate-x-2">{project1}</p>
+        <div className=" works-1 flex absolute top-[105vh] left-[-30vw] rounded-lg work-pic-1 flex-col gap-3 font-serif italic text-sm">
+        {p1? <div className="flex flex-col"> <input type="text" value={project1[0]} onChange={(e) => handleTitleChange(e,setProject1) }/> <input type="text" value={project1[1]} onChange={(e) => handleSourceChange(e,setProject1)}/> </div> : <p className=" -translate-x-2" onClick={() => sp1(true)} >{project1[0]}</p>}
           <img
-            src="chatapp.jpg"
+            src={project1[3]}
+            onClick={() => addInput(setProject1)}
             alt="projects"
             className="project-img object-cover h-[30vh] w-[12vw] rounded-lg object-center"
           />
         </div>
-        <div className=" works-1 absolute top-[110vh] left-[-80vw]  rounded-lg flex work-pic-2 flex-col gap-3 font-serif italic text-sm" onClick={() => openSite(project2Link)} >
-        <p className=" -translate-x-2">{project2}</p>
+        <div className=" works-1 absolute top-[110vh] left-[-80vw]  rounded-lg flex work-pic-2 flex-col gap-3 font-serif italic text-sm">
+        {p2? <div className="flex flex-col"> <input type="text" value={project2[0]} onChange={(e) => handleTitleChange(e,setProject2) }/> <input type="text" value={project2[1]} onChange={(e) => handleSourceChange(e,setProject2)}/> </div> : <p className=" -translate-x-2" onClick={() => sp2(true)} >{project2[0]}</p>}
           <img
-            src="photography.jpg"
+            src={project2[3]}
+            onClick={() => addInput(setProject2)}
             alt="projects"
             className="project-img object-cover h-[30vh] w-[12vw] rounded-lg object-center"
           />
         </div>
 
-        <div className=" works-1 absolute top-[165vh] left-[-55vw]  rounded-lg flex work-pic-3 flex-col gap-3 font-serif italic text-sm" onClick={() => openSite(project3Link)} >
-        <p className=" -translate-x-2">{project3}</p>
+        <div className=" works-1 absolute top-[165vh] left-[-55vw]  rounded-lg flex work-pic-3 flex-col gap-3 font-serif italic text-sm">
+        {p3? <div className="flex flex-col"> <input type="text" value={project3[0]} onChange={(e) => handleTitleChange(e,setProject3) }/> <input type="text" value={project3[1]} onChange={(e) => handleSourceChange(e,setProject3)}/> </div> : <p className=" -translate-x-2" onClick={() => sp3(true)} >{project3[0]}</p>}
           <img
-            src="dalle.jpg"
+            src={project3[3]}
+            onClick={() => addInput(setProject3)}
             alt="projects"
             className="project-img object-cover h-[35vh] w-[14vw] rounded-lg object-center"
           />
@@ -194,27 +229,30 @@ const Projects = ({ projectsRef }) => {
       </div>
       <div className="w-[100vw] h-[100vh] panel project-3 relative text-white">
         
-        <div className=" works-2 absolute top-[115vh] left-[-130vw]  rounded-lg work-pic-4 flex-col flex gap-3 font-serif italic text-sm" onClick={() => openSite(project4Link)} >
-        <p className=" -translate-x-2">{project4}</p>
+        <div className=" works-2 absolute top-[115vh] left-[-130vw]  rounded-lg work-pic-4 flex-col flex gap-3 font-serif italic text-sm" >
+        {p4? <div className="flex flex-col"> <input type="text" value={project4[0]} onChange={(e) => handleTitleChange(e,setProject4) }/> <input type="text" value={project4[1]} onChange={(e) => handleSourceChange(e,setProject4)}/> </div> : <p className=" -translate-x-2" onClick={() => sp4(true)} >{project4[0]}</p>}
           {" "}
           <img
-            src="snake.jpg"
+            src={project4[3]}
+            onClick={() => addInput(setProject4)}
             alt="projects"
             className="project-img object-cover h-[30vh] w-[12vw] rounded-lg object-center"
           />
         </div>
-        <div className=" works-2 absolute top-[120vh] left-[-180vw] rounded-lg work-pic-5 flex-col flex gap-3 font-serif italic text-sm" onClick={() => openSite(project5Link)} >
-        <p className=" -translate-x-2">{project5}</p>
+        <div className=" works-2 absolute top-[120vh] left-[-180vw] rounded-lg work-pic-5 flex-col flex gap-3 font-serif italic text-sm" >
+        {p5? <div className="flex flex-col"> <input type="text" value={project5[0]} onChange={(e) => handleTitleChange(e,setProject5) }/> <input type="text" value={project5[1]} onChange={(e) => handleSourceChange(e,setProject5)}/> </div> : <p className=" -translate-x-2" onClick={() => sp5(true)} >{project5[0]}</p>}
           <img
-            src="developer.jpg"
+            src={project5[3]}
+            onClick={() => addInput(setProject5)}
             alt="projects"
             className="project-img object-cover h-[30vh] w-[12vw] rounded-lg object-center"
           />
         </div>
-        <div className=" works-2 absolute top-[165vh] left-[-155vw] rounded-lg work-pic-6 flex-col flex gap-3 font-serif italic text-sm" onClick={() => openSite(project6Link)} >
-        <p className=" -translate-x-2">{project6}</p>
+        <div className=" works-2 absolute top-[165vh] left-[-155vw] rounded-lg work-pic-6 flex-col flex gap-3 font-serif italic text-sm" >
+        {p6? <div className="flex flex-col"> <input type="text" value={project6[0]} onChange={(e) => handleTitleChange(e,setProject6) }/> <input type="text" value={project6[1]} onChange={(e) => handleSourceChange(e,setProject6)}/> </div> : <p className=" -translate-x-2" onClick={() => sp6(true)} >{project6[0]}</p>}
           <img
-            src="moviescope.jpg"
+            src={project6[3]}
+            onClick={() => addInput(setProject6)}
             alt="projects"
             className="project-img object-cover h-[35vh] w-[14vw] rounded-lg object-center"
           />
