@@ -26,7 +26,7 @@ Follow these steps to set up and customize your Photographer Portfolio:
 
 ```bash
 git clone https://github.com/your-username/photography-portfolio-1.git
-cd photography-portfolio-1
+cd Portfolio
 ```
 
 2. Install dependencies:
