@@ -16,7 +16,7 @@ const App = () => {
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
   const [showOverlay , setShowOverlay] = useState(false)
-
+  const [idValue , setIdValue] = useState("")
   //content
   const [tagline, setTagLine] = useState(`Available for freelance work`);
   const [name, setName] = useState(`Mohana krishnan`);
@@ -27,12 +27,12 @@ const App = () => {
   const [gitHub , setGitHub] = useState(`https://github.com`)
   const [linkedIn , setLinkedIn] = useState(`https://www.linkedin.com`)
   const [twitter , setTwitter] = useState(`https://twitter.com`)
-  const [project1 , setProject1] = useState([`Chat App`,`https://example.com/`,null,'pic1.jpg'])
-  const [project2 , setProject2] = useState([`Photographer Portfolio`,`https://example.com/`,null,'pic2.jpg'])
-  const [project3 , setProject3] = useState([`Image generation platform`,`https://example.com/`,null,'pic3.jpg'])
-  const [project4 , setProject4] = useState([`AI snake`,`https://example.com`,null,'pic4.jpg'])
-  const [project5 , setProject5] = useState([`Personal Portfolio`,`https://example.com/`,null,'pic5.jpg'])
-  const [project6 , setProject6] = useState([`Movie finder`,`https://example.com/`,null,'pic6.jpg'])
+  const [project1 , setProject1] = useState([`Chat App`,`https://example.com/`,null,'pic1.png'])
+  const [project2 , setProject2] = useState([`Photographer Portfolio`,`https://example.com/`,null,'pic2.png'])
+  const [project3 , setProject3] = useState([`Image generation platform`,`https://example.com/`,null,'pic3.png'])
+  const [project4 , setProject4] = useState([`AI snake`,`https://example.com`,null,'pic4.png'])
+  const [project5 , setProject5] = useState([`Personal Portfolio`,`https://example.com/`,null,'pic5.png'])
+  const [project6 , setProject6] = useState([`Movie finder`,`https://example.com/`,null,'pic6.png'])
   const [aboutLine1 , setAboutLine1] = useState(`Hey! i'm Mohan`)
   const [aboutLine2 , setAboutLine2] = useState(`a nineteen years old`)
   const [aboutLine3 , setAboutLine3] = useState(`ful-stack developer. Currently`)
@@ -44,7 +44,7 @@ const App = () => {
   const [aboutHead2 , setAboutHead2] = useState(`INTERACTION`)
   const [aboutHead3 , setAboutHead3] = useState(`PERFORMANCE`)
   const [aboutHead4 , setAboutHead4] = useState(`TEAMWORK`)
-  const [aboutImage, setAboutImage] = useState([null,'pic7.jpg'])
+  const [aboutImage, setAboutImage] = useState([null,'pic7.png'])
 
   //content
 
@@ -137,14 +137,17 @@ const App = () => {
       },
     });
   }, []);
-
+  useEffect(() => {
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    setIdValue(urlSearchParams.get('id'))
+  }, []);
   function scroller(element) {
     console.log(element.current, element.current.offsetLeft);
     window.scrollTo({ top: element.current.offsetLeft, behavior: "smooth" });
   }
   function host() {
-    
     const formData = new FormData();
+    formData.append("userID",decodeURIComponent(idValue))
     formData.append("variant", "Developer-Portfolio-1")
     formData.append("emailAddress", email);
     formData.append("navName", name);
