@@ -14,10 +14,15 @@ const Home = () => {
     };
 
     window.addEventListener("load", handlePageLoad);
-
+     setTimeout(() => {
+       if (loading){
+         setLoading(false)
+       } 
+    }, 3500);
     return () => {
       window.removeEventListener("load", handlePageLoad);
     };
+    
   }, []);
   return <>
   {loading ? <Loader /> : <App />}
