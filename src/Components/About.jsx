@@ -6,7 +6,7 @@ import { faArrowTurnDown } from "@fortawesome/free-solid-svg-icons";
 
 const About = ({aboutRef , contactRef , scroller , heroRef}) => {
   gsap.registerPlugin(ScrollTrigger);
-  const email="mohanakrishnang04@gmail.com" , linkedIn = "https://www.linkedin.com/in/mohan-g-24723322a/" , gitHub = "https://github.com/mohan-246" , twitter = "https://twitter.com/Mohan24__"
+  const email="mohanakrishnang04@gmail.com" , linkedIn = "https://www.linkedin.com/in/mohan-g-24723322a/" , gitHub = "https://github.com/mohan-246" , LeetCode = "https://leetcode.com/u/mohan246/"
 
   useEffect(() => {
     gsap.from(".name span", {
@@ -223,9 +223,9 @@ const About = ({aboutRef , contactRef , scroller , heroRef}) => {
               className=""
               target="_blank"
               rel="noopener noreferrer"
-              href={twitter}
+              href={LeetCode}
             >
-              Twitter
+              LeetCode
             </a>
             <a className="" href={`mailto:${email}`}>
               email
