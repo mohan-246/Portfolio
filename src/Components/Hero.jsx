@@ -6,7 +6,7 @@ import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 // import * as THREE from 'three';
 
 const Hero = ({ heroRef }) => {
-  const email="mohanakrishnang04@gmail.com" , linkedIn = "https://www.linkedin.com/in/mohan-g-24723322a/" , gitHub = "https://github.com/mohan-246" , twitter = "https://twitter.com/Mohan24__";
+  const email="mohanakrishnang04@gmail.com" , linkedIn = "https://www.linkedin.com/in/mohan-g-24723322a/" , gitHub = "https://github.com/mohan-246" , LeetCode = "https://leetcode.com/u/mohan246/";
   gsap.registerPlugin(ScrollTrigger);
   // const particlesRef = useRef(null);
   useEffect(() => {
@@ -71,9 +71,9 @@ const Hero = ({ heroRef }) => {
               className=""
               target="_blank"
               rel="noopener noreferrer"
-              href={twitter}
+              href={LeetCode}
             >
-              Twitter
+              LeetCode
             </a>
             <a className="" href={`mailto:${email}`}>
               email
